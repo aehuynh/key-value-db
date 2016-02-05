@@ -4,6 +4,15 @@ A simple in-memory, key-value database that supports transactions
 ### How to Run
 The Key Value Database requires Python 3.4.3. It is a command line program. To start the database command line: `python src/database.py`
 
+### Implementation of Transactions
+The database runs all commands and changes its state permanantely even when there is an open transaction. When the database runs a command, it supports transactions by creating and saving "undo" commands that undo the current command to a transaction block. 
+
+A transaction block represents a transaction. Transaction blocks are kept in a stack.
+
+On rollback, the database pops a transaction block off the stack and runs the undo commands of that block.
+
+On commit, the database removes all the transaction blocks from the stack.
+
 ### Command Syntax
 Commands and arguments are split by spaces. Commands will not run without the correct number of arguments. 
 
