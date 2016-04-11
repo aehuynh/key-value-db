@@ -1,8 +1,8 @@
-# Key Value Database
-A simple in-memory, key-value database that supports transactions
+# SiderDB
+An in-memory, key-value database that supports transactions
 
 ### How to Run
-The Key Value Database requires Python 3.4.3. It is a command line program. To start the database command line: `python src/database.py`
+SiderDB requires Python 3.4.3. It is a command line program. To start the database command line: `python src/database.py`
 
 ### Transactions
 The database runs all commands and changes its state permanantely even when there is an open transaction. When the database runs a command, it supports transactions by creating and saving "undo" commands that undo the current command to a transaction block. 
